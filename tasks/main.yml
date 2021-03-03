@@ -22,7 +22,7 @@
 
 - name: Allow firewalld services
   become: yes
-  firewalld:
+  ansible.posix.firewalld:
     service: "{{ item }}"
     permanent: yes
     state: enabled
@@ -32,7 +32,7 @@
 
 - name: Allow firewalld ports
   become: yes
-  firewalld:
+  ansible.posix.firewalld:
     port: "{{ item }}"
     permanent: yes
     state: enabled
